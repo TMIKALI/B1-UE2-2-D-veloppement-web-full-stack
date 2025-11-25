@@ -27,6 +27,18 @@ header {
     margin-bottom: 5px ;
 }
 
+
+
+#explore {
+    position: static !important;
+    z-index: auto !important;
+    overflow: visible !important;
+}
+
+
+
+
+
 /* *****************************************************
 * 2. GRILLE ET CARTES
 ***************************************************** */
@@ -40,13 +52,11 @@ header {
     /* Ajoute un espacement entre les cartes */
     gap: 10px; 
     margin-top: 30px;
-    /* Force le défilement horizontal si la ligne dépasse la taille de l'écran */
-    overflow-x: auto; 
+    /* Force le défilement horizontal si la ligne dépasse la taille de l'écran */ 
     /* S'assure que la grille prend la largeur minimale nécessaire */
     width: auto; 
     padding-bottom: 10px; /* Ajout d'espace pour la barre de défilement */
 }
-
 .event-card {
     /* Ajoute ceci pour que chaque carte ait une taille fixe et ne s'étire pas */
     flex-shrink: 0; 
@@ -62,7 +72,11 @@ header {
 }
 
 .event-card:hover {
-    transform: translateY(-30px); 
+    transform: translateY(-20px); 
+    box-shadow:                                        /* effet néon au clic */
+        0 0 6px rgba(0, 234, 255, 0.4),
+        0 0 12px rgba(0, 234, 255, 0.25);    
+
 }
 
 .event-image img {
