@@ -1,8 +1,8 @@
 // *****************************************************
-// --- 1. DONNÉES DE L'APPLICATION (Le "State" Statistique) ---
+// --- 1. DONNÉES DE L'APPLICATION ---
 // *****************************************************
 
-// Tableau des événements. On conserve les données complètes (titre, lieu, places).
+// Tableau des événements. 
 let events = [
     { 
         id: 1, 
