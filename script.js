@@ -87,3 +87,21 @@ function renderEventsGrid() {                             // Nom de la fonction
 
 
 renderEventsGrid();                   // Exécute notre fonction
+
+
+
+function setupSidebarToggle() {
+    const toggleButton = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content'); // Pour décaler le contenu
+    
+    // Écoute l'événement 'click' sur le bouton menu
+    toggleButton.addEventListener('click', () => {
+        // Bascule la classe 'active' sur la sidebar pour l'afficher/la masquer
+        sidebar.classList.toggle('active');
+        // Bascule la classe 'sidebar-open' sur le contenu principal pour le décaler
+        mainContent.classList.toggle('sidebar-open'); 
+    });
+}
+
+setupSidebarToggle();

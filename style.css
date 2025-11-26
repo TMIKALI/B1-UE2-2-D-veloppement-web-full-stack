@@ -73,7 +73,7 @@ header {
 
 .event-card:hover {
     transform: translateY(-20px); 
-    box-shadow:                                        /* effet néon au clic */
+    box-shadow:                                        /* effet néon */
         0 0 6px rgba(0, 234, 255, 0.4),
         0 0 12px rgba(0, 234, 255, 0.25);    
 
@@ -110,3 +110,81 @@ header {
     margin-top: 15px;
     padding: 10px;
 }
+
+
+
+
+
+#app-container {
+    display: flex; 
+    min-height: 100vh; 
+    background-color: #0B0F19; 
+}
+
+/* 2.1 STYLES DE LA BARRE LATÉRALE (SIDEBAR) */
+#sidebar {
+    width: 250px; /* Augmentons légèrement la largeur pour plus d'espace */
+    background-color: #111827;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    border-right: 1px solid #374151; 
+    
+    /* LOGIQUE DE MASQUAGE/AFFICHAGE */
+    position: fixed; /* Rendre la sidebar flottante */
+    height: 100%;
+    /* MASQUÉ : décalé complètement à gauche de sa largeur */
+    transform: translateX(-250px); 
+    transition: transform 0.3s ease-in-out; /* Animation douce */
+    z-index: 10; /* Assure qu'elle est au-dessus du contenu principal */
+}
+
+/* AFFICHÉ : ramené à sa position normale */
+#sidebar.active {
+    transform: translateX(0);
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 20px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #1f2937;
+    color: #e2e8f0;
+}
+
+.nav-item.active {
+    background-color: #2563eb; 
+    color: #ffffff;
+}
+
+.nav-item i {
+    margin-right: 10px;
+}
+
+/* 2.2 STYLES DU CONTENU PRINCIPAL */
+#main-content {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    /* Ajoutons une marge pour empêcher le contenu de se chevaucher si la sidebar est ouverte */
+    padding-left: 0; 
+    transition: padding-left 0.3s ease-in-out;
+}
+
+/* Décalage du contenu principal quand la sidebar est active */
+#main-content.sidebar-open {
+    padding-left: 250px;
+}
+
+
+#explore {
+    padding: 0 30px 20px 30px; 
+    position: static !important;
+    z-index: auto !important;
+    overflow: visible !important;

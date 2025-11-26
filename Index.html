@@ -10,23 +10,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
 </head>
 <body>
-    <header>
-        <h1>Liste des Événements du Campus</h1>
-    </header>
+    <div id="app-container">
+        
+        <aside id="sidebar">
+            <div class="sidebar-top">
+                <nav>
+                    <a href="#" class="nav-item active">
+                        <i class="fas fa-bullhorn"></i> Événements
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-calendar-alt"></i> Calendrier
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user-circle"></i> Compte
+                </a>
+            </div>
+        </aside>
 
-    <!-- SECTION PRINCIPALE -->
-    <!-- id="explore" => identifiant UNIQUE -->
+        <main id="main-content">
+            <header>
+                <button id="menu-toggle" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <h1>Liste des Événements du Campus</h1>
+            </header>
 
-    <section id="explore">
-        <h2>À l'affiche</h2>
-        <p class="subtitle">Cliquez sur une carte pour voir plus de détails.</p>     
-
-     <!-- pour le style CSS (disposition en ligne, scroll horizontal)
-     id="events-grid" → pour que le JS ajoute les cartes -->
+            <section id="explore">
+                <h2>À l'affiche</h2>
+                <p class="subtitle">Cliquez sur une carte pour voir plus de détails.</p>     
     
-        <div class="event-grid" id="events-grid">
-            </div>
-    </section>
+                <div class="event-grid" id="events-grid">
+                </div>
+            </section>
+        </main>
+    </div>
         <script src="script.js"></script>
 </body>
 </html>
