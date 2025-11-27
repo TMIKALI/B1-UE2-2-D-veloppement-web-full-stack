@@ -46,7 +46,14 @@ let events = [
 
 function renderEventsGrid() {                             // Nom de la fonction
     const grid = document.getElementById('events-grid');  // cherche dans le HTML l’élément qui a id="events-grid", grid = notre boîte
-    let htmlContent = '';                                 // Prépare une variable pour stocker le futur HTML
+    
+
+if (!grid) {
+        return; // Si l'élément n'existe pas (ex: on est sur calendrier.html), on arrête la fonction ici.
+    }
+
+
+    let htmlContent = '';                                 // Prépare une variable pour stocker le futur HTML
 
     events.forEach(e => {                                 // Parcours de tous les événements : pour chaque événement e dans la liste events
         
@@ -64,6 +71,7 @@ function renderEventsGrid() {                             // Nom de la fonction
                 
                 <div class="event-details">
                     
+                
                     <div class="event-detail-line"> 
                         <i class="fas fa-calendar"></i> ${new Date(e.start).toLocaleDateString('fr-FR')}  
                     </div>
@@ -91,6 +99,7 @@ renderEventsGrid();                   // Exécute notre fonction
 
 
 function setupSidebarToggle() {
+    console.log("début")
     const toggleButton = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('main-content'); // Pour décaler le contenu
@@ -102,6 +111,7 @@ function setupSidebarToggle() {
         // Bascule la classe 'sidebar-open' sur le contenu principal pour le décaler
         mainContent.classList.toggle('sidebar-open'); 
     });
+    console.log("Fin")
 }
 
 setupSidebarToggle();

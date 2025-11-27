@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements guardia</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+</head>
+<body>
+    <div id="app-container">
+        
+        <aside id="sidebar">
+            <div class="sidebar-top">
+                <nav>
+                    <a href="accueil.html" class="nav-item">
+                        <i class="fas fa-bullhorn"></i> Acceuil
+                    </a>
+                    <a href="Index.html" class="nav-item active">
+                        <i class="fas fa-bullhorn"></i> Événements
+                    </a>
+                    <a href="calendrier.html" class="nav-item">
+                        <i class="fas fa-calendar-alt"></i> Calendrier
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-user-circle"></i> Compte
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <main id="main-content">
+            <header>
+                <button id="menu-toggle" class="menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <h1>Liste des Événements du Campus</h1>
+            </header>
+
+            <section id="explore">
+                <h2>À l'affiche</h2>
+                <p class="subtitle">Cliquez sur une carte pour voir plus de détails.</p>     
+    
+                <div class="event-grid" id="events-grid">
+                </div>
+            </section>
+        </main>
+    </div>
+        <script src="script.js"></script>
+</body>
+</html>
