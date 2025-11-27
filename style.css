@@ -32,6 +32,7 @@ header {
     margin-bottom: 30px;
 }
 
+
 .subtitle {
     color: #9ca3af;
     margin-bottom: 5px ;
@@ -86,7 +87,7 @@ header {
     box-shadow:                                        /* effet néon */
         0 0 6px rgba(0, 234, 255, 0.4),
         0 0 12px rgba(0, 234, 255, 0.25);    
-
+    border-color: #2563eb;
 }
 
 .event-image img {
@@ -206,6 +207,27 @@ header {
 
 
 
+/* CONFIGURATION DE LA VAGUE */
+.wave-container1 {
+    position: absolute;
+    bottom: 550px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-container1 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px; /* Hauteur  vague */
+}
+
+.wave-container1 .shape-fill {
+    fill: #0B0F19;              /* couleur vague*/
+}
 
 
 
@@ -219,8 +241,9 @@ header {
 
 
 
-
-
+/* *****************************************************
+* Page d'acceuil
+***************************************************** */
 
 
 
@@ -278,10 +301,75 @@ header {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 100px; /* Hauteur de la vague */
+    height: 100px; /* Hauteur  vague */
 }
 
-/* La couleur de la vague doit être EXACTEMENT celle de ton body (#0B0F19) */
 .wave-container .shape-fill {
-    fill: #0B0F19; 
+    fill: #0B0F19;              /* couleur vague*/
+}
+
+
+/* --- STYLE DES RACCOURCIS RAPIDES sur la page d'acceuil --- */
+
+.quick-access-section {
+    padding: 40px 20px;   /* interieur bloc*/
+    display: flex;
+    justify-content: center; 
+    margin-top: 70px;     /* espace avec la wave*/
+}
+
+.quick-links-container {
+    display: flex;
+    flex-wrap: wrap; /* Passe à la ligne si trop petit*/
+    gap: 20px; /* Espace entre les rectangles */
+    justify-content: center;
+}
+
+.quick-card {
+    width: 200px; 
+    height: 120px; 
+    
+    /* Style visuel */
+    background-color: #1a202c;
+    border: 1px solid #374151;
+    border-radius: 15px;     
+    
+    /* Pour aligner le texte et l'icône */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Enlève le soulignement du lien */
+    color: #e2e8f0;
+    
+    /* Animation */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.quick-card h3 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.quick-card p {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+.card-icon i {
+    font-size: 1.8rem;
+    color: #2563eb; /* Bleu */
+    margin-bottom: 5px;
+}
+
+/* --- EFFET AU SURVOL (HOVER) --- */
+.quick-card:hover {
+    transform: translateY(-10px); 
+    background-color: #1f2937;
+    box-shadow: 
+        0 0 6px rgba(0, 234, 255, 0.4),
+        0 0 12px rgba(0, 234, 255, 0.25);
+    border-color: #2563eb;
 }
